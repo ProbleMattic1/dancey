@@ -1,0 +1,14 @@
+feat_dim: 128
+num_classes: 51
+window: 96
+hop: 48
+bs: 16
+nw: 2
+hid: 128
+lr: 0.0003
+wd: 0.01
+epochs: 5
+lambda_bnd: 0.3
+index_train: data/index_train.jsonl
+index_val: data/index_val.jsonl
+out_dir: runs/mv-0.1.0

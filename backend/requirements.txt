@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+pydantic
+aiokafka
+asyncpg
+boto3
+numpy
+scipy
+librosa
+opencv-python-headless
+PyYAML
+pandas
+reportlab
+python-dotenv
+# torch  # install from https://pytorch.org/get-started/locally/ (match your CUDA)
