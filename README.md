@@ -75,6 +75,26 @@ The repository is structured as:
 | `scripts/` | Helper scripts for fetching ML models and running migrations. |
 | `tests/` | End‑to‑end test suite. |
 
+##The tools we will be using
+FastAPI – A lightweight Python framework that simplifies writing web APIs; it powers the backend endpoints for uploads, analysis jobs, and related data operations
+Next.js – A React-based framework used for the web interface; it combines server‑side rendering with client‑side interactivity and is styled with Tailwind CSS
+Tailwind CSS – A utility-first CSS library that provides prebuilt classes so the frontend can be styled quickly without writing much custom CSS
+Kafka – A high-throughput messaging system that lets different parts of the app exchange data asynchronously; it’s the default pipeline backbone for analysis tasks
+Celery – A Python task queue that can run jobs in the background; the project offers a Celery-based pipeline (with Redis) for environments where Kafka isn’t available
+Docker & Docker Compose – Docker packages services into containers, and Docker Compose orchestrates them so databases, message brokers, and other dependencies start together with one command
+Kubernetes – A system for running containerized applications across clusters; the project can deploy components as Kubernetes jobs for one-off analyses
+Helm – A package manager for Kubernetes that bundles deployment settings into “charts,” enabling easy installation of the backend and frontend services
+Postgres – An open-source relational database used to store analysis results and metadata for uploaded videos
+MinIO – An object storage service compatible with Amazon S3, employed for storing uploaded videos and derived clips
+Redis – An in-memory key-value store used here as a message broker for Celery and potentially for caching
+Alembic – A database migration tool that automatically upgrades the Postgres schema when services start or when new migrations are generated
+ONNX & TFLite – Standard formats for machine-learning models; the default pose estimator uses an ONNX model, while a smaller TensorFlow Lite variant can be substituted for efficiency
+DVC (Data Version Control) – A tool that versions datasets and models, acting like “Git for data” to keep track of training inputs and outputs
+MLflow – A platform that tracks machine-learning experiments and model metadata, ensuring results are reproducible over time
+pytest (E2E test) – A testing framework used to run end-to-end checks, confirming the entire pipeline works against a sample clip
+Slack/Discord webhooks – Simple HTTP hooks that allow the app to send notifications when analyses finish, keeping users informed without manual polling
+
+These tools and technologies form the backbone of the project’s infrastructure, enabling everything from local development and automated deployments to background processing, storage, and monitoring.
 
 ## Docker Compose boot with migrations
 `make infra-up` (or `docker compose -f infra/docker-compose.yml up -d`) boots
