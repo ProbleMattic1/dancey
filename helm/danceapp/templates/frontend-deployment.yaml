@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: danceapp-frontend }
+spec:
+  replicas: {{ .Values.frontend.replicas }}
+  selector: { matchLabels: { app: danceapp-frontend } }
+  template:
+    metadata: { labels: { app: danceapp-frontend } }
+    spec:
+      containers:
+        - name: frontend
+          image: {{ .Values.image.frontend }}
+          ports: [ { containerPort: 3000 } ]
+          env:
+          {{- range $k, $v := .Values.frontend.env }}
+            - name: {{ $k }}
+              value: "{{ $v }}"
+          {{- end }}

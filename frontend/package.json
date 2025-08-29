@@ -1,21 +1,12 @@
 {
   "name": "danceapp-web",
+  "version": "0.0.0",
   "private": true,
-  "version": "0.2.0",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "next": "14.2.3",
-    "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "gen:api": "openapi-typescript http://localhost:8000/openapi.json -o lib/api.gen.ts"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.19",
-    "postcss": "^8.4.38",
-    "tailwindcss": "^3.4.10",
-    "typescript": "^5.5.3"
+    "openapi-typescript": "^7.4.2"
   }
 }

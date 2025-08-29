@@ -1,0 +1,50 @@
+{
+  "taxonomy": "tx-0.1",
+  "moves": [
+    {
+      "id": "mv_arm_wave",
+      "name": "Arm Wave",
+      "family": "waves",
+      "difficulty": 2,
+      "aliases": [
+        "arm wave"
+      ]
+    },
+    {
+      "id": "mv_body_wave",
+      "name": "Body Wave",
+      "family": "waves",
+      "difficulty": 3,
+      "aliases": [
+        "body wave"
+      ]
+    },
+    {
+      "id": "mv_slide_left",
+      "name": "Slide Left",
+      "family": "slides",
+      "difficulty": 1,
+      "aliases": [
+        "left slide"
+      ]
+    },
+    {
+      "id": "mv_slide_right",
+      "name": "Slide Right",
+      "family": "slides",
+      "difficulty": 1,
+      "aliases": [
+        "right slide"
+      ]
+    },
+    {
+      "id": "mv_two_step",
+      "name": "Two Step",
+      "family": "steps",
+      "difficulty": 1,
+      "aliases": [
+        "2-step"
+      ]
+    }
+  ]
+}
