@@ -155,52 +155,59 @@ Major steps from that plan are summarized below:
     choreography graph, Markov‑based move suggestions, beat alignment and
     retargeting, plus exporters like PDF tutorial sheets and JSON schemas for
     external tools.
+  <<<<<<< codex/expand-project-details-in-readme-3ix34v
 
-### Implementation Blueprint Highlights
+  ### Implementation Blueprint Highlights
 
-- **API Contracts** – FastAPI endpoints manage uploads, taxonomy CRUD, segment
-  search and composition editing with Pydantic request/response models.
-- **Message Schemas & Queues** – Kafka topics (or Celery tasks) carry typed
-  messages through decode → pose → features → segment → identify → index stages.
-- **Storage Layout** – Raw uploads and derived clips live in object storage
-  (MinIO/S3); metadata and segment records reside in Postgres.
-- **Feature Vectors & Segmentation** – Normalized joint coordinates and motion
-  energy feed change‑point detectors that split videos into candidate move
-  segments.
-- **Classifier Architectures** – Early prototypes rely on template matching; the
-  roadmap evolves toward TCN or Transformer classifiers with calibration.
-- **Data Versioning & Reproducibility** – Dataset manifests and model artifacts
-  are tracked with DVC and MLflow; runs log random seeds and environment hashes.
-- **Security & Privacy** – Uploads undergo AV scanning and consent checks, with
-  audit logs for access and deletions.
-- **Testing Strategy** – Unit tests cover workers and API routes, while an E2E
-  smoke test validates the full pipeline against a sample clip.
-- **Worker Skeletons** – DecodeWorker, PoseWorker, FeaturesWorker, SegmentWorker,
-  IdentifyWorker and IndexWorker provide extensible entry points for each stage.
+  - **API Contracts** – FastAPI endpoints manage uploads, taxonomy CRUD, segment
+    search and composition editing with Pydantic request/response models.
+  - **Message Schemas & Queues** – Kafka topics (or Celery tasks) carry typed
+    messages through decode → pose → features → segment → identify → index stages.
+  - **Storage Layout** – Raw uploads and derived clips live in object storage
+    (MinIO/S3); metadata and segment records reside in Postgres.
+  - **Feature Vectors & Segmentation** – Normalized joint coordinates and motion
+    energy feed change‑point detectors that split videos into candidate move
+    segments.
+  - **Classifier Architectures** – Early prototypes rely on template matching; the
+    roadmap evolves toward TCN or Transformer classifiers with calibration.
+  - **Data Versioning & Reproducibility** – Dataset manifests and model artifacts
+    are tracked with DVC and MLflow; runs log random seeds and environment hashes.
+  - **Security & Privacy** – Uploads undergo AV scanning and consent checks, with
+    audit logs for access and deletions.
+  - **Testing Strategy** – Unit tests cover workers and API routes, while an E2E
+    smoke test validates the full pipeline against a sample clip.
+  - **Worker Skeletons** – DecodeWorker, PoseWorker, FeaturesWorker, SegmentWorker,
+    IdentifyWorker and IndexWorker provide extensible entry points for each stage.
 
-### Composer Intelligence & Exporters
+  ### Composer Intelligence & Exporters
 
-- **Choreography Graph** – Sequence data produces move statistics and transition
-  probabilities that inform suggestions.
-- **Markov Suggestion Engine** – A backoff model blends trigram, bigram and
-  unigram counts with temperature‑scaled sampling and optional difficulty
-  constraints.
-- **Beat Alignment & Retargeting** – Durations are normalized to beats and can be
-  stretched or mirrored to match a new song’s tempo or camera angle.
-- **Export Formats** – Planned outputs include PDF step sheets, JSON definitions
-  and future auto‑rendered tutorial videos.
+  - **Choreography Graph** – Sequence data produces move statistics and transition
+    probabilities that inform suggestions.
+  - **Markov Suggestion Engine** – A backoff model blends trigram, bigram and
+    unigram counts with temperature‑scaled sampling and optional difficulty
+    constraints.
+  - **Beat Alignment & Retargeting** – Durations are normalized to beats and can be
+    stretched or mirrored to match a new song’s tempo or camera angle.
+  - **Export Formats** – Planned outputs include PDF step sheets, JSON definitions
+    and future auto‑rendered tutorial videos.
 
-### Operational Enhancements
+  ### Operational Enhancements
 
-- **Notifications** – Slack/Discord webhook helpers announce when identification
-  and indexing jobs complete.
-- **Optional ORM** – Workers can switch between async SQLAlchemy models and raw
-  SQL for database access.
-- **Kubernetes Job Template** – Helm chart includes a one‑off job for triggering
-  analysis of a specific video via the API.
+  - **Notifications** – Slack/Discord webhook helpers announce when identification
+    and indexing jobs complete.
+  - **Optional ORM** – Workers can switch between async SQLAlchemy models and raw
+    SQL for database access.
+  - **Kubernetes Job Template** – Helm chart includes a one‑off job for triggering
+    analysis of a specific video via the API.
+  =======
+  >>>>>>> main
 
-These notes capture the intent and methodology behind the generated codebase
-and serve as a guide for future development.
+  These notes capture the intent and methodology behind the generated codebase
+  and serve as a guide for future development.
 
-## Timing
-Last updated: Fri Aug 29 03:58:08 UTC 2025
+  ## Timing
+  <<<<<<< codex/expand-project-details-in-readme-3ix34v
+  Last updated: Fri Aug 29 03:58:08 UTC 2025
+  =======
+  Last updated: Fri Aug 29 03:54:11 UTC 2025
+  >>>>>>> main
