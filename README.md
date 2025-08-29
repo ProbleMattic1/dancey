@@ -146,26 +146,18 @@ Major steps from that plan are summarized below:
     implementing pose extraction and heuristic segmentation, drafting taxonomy
     v0.1, building a minimal upload UI, annotating sample clips, and writing
     policies.
-  <<<<<<< codex/document-steps-from-danceychatgpt.md-wc2ki7
-  16. **Implementation Blueprints** – Subsequent sections of the transcript
-      provide deeper guidance for:
-      - API contracts
-      - Queue/message schemas
-      - Storage layout
-      - Feature vectors
-      - Segmentation parameters
-      - Classifier architectures
-      - Data versioning
-      - Security considerations
-      - Testing strategy
-      - Runnable worker skeletons
-    =======
-
-  Subsequent sections of the transcript provide implementation blueprints for
-  API contracts, queue/message schemas, storage layout, feature vectors,
-  segmentation parameters, classifier architectures, data versioning, security
-  considerations, testing strategy, and runnable worker skeletons.
-  >>>>>>> main
+16. **Implementation Blueprints** – Subsequent sections of the transcript
+    provide deeper guidance for API contracts, queue/message schemas, storage
+    layout, feature vectors, segmentation parameters, classifier
+    architectures, data versioning, security considerations, testing
+    strategy, and runnable worker skeletons.
+17. **Composer Intelligence & Exporters** – Later planning covers a
+    choreography graph, Markov‑based move suggestions, beat alignment and
+    retargeting, plus exporters like PDF tutorial sheets and JSON schemas for
+    external tools.
 
 These notes capture the intent and methodology behind the generated codebase
 and serve as a guide for future development.
+
+## Timing
+Last updated: Fri Aug 29 03:54:11 UTC 2025
