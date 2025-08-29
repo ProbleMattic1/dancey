@@ -97,17 +97,3 @@ video ID:
 
 The Job uses the backend image to call the API and queue analysis for
 `videoId`.
-
-## Planning
-
-A lightweight [planning document](docs/planning.md) captures milestones and the
-overall project timeline.
-
-### Gantt overview
-
-| Task | Week 1 | Week 2 | Week 3 | Week 4 |
-| ---- | :----: | :----: | :----: | :----: |
-| Infrastructure | ██████ |        |        |        |
-| Backend API & DB |        | ██████ |        |        |
-| Frontend UI |        |        | ██████ |        |
-| Testing & Deploy |        |        |        | ██████ |
