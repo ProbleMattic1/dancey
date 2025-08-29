@@ -146,26 +146,61 @@ Major steps from that plan are summarized below:
     implementing pose extraction and heuristic segmentation, drafting taxonomy
     v0.1, building a minimal upload UI, annotating sample clips, and writing
     policies.
-  <<<<<<< codex/document-steps-from-danceychatgpt.md-wc2ki7
-  16. **Implementation Blueprints** – Subsequent sections of the transcript
-      provide deeper guidance for:
-      - API contracts
-      - Queue/message schemas
-      - Storage layout
-      - Feature vectors
-      - Segmentation parameters
-      - Classifier architectures
-      - Data versioning
-      - Security considerations
-      - Testing strategy
-      - Runnable worker skeletons
-    =======
+16. **Implementation Blueprints** – Subsequent sections of the transcript
+    provide deeper guidance for API contracts, queue/message schemas, storage
+    layout, feature vectors, segmentation parameters, classifier
+    architectures, data versioning, security considerations, testing
+    strategy, and runnable worker skeletons.
+17. **Composer Intelligence & Exporters** – Later planning covers a
+    choreography graph, Markov‑based move suggestions, beat alignment and
+    retargeting, plus exporters like PDF tutorial sheets and JSON schemas for
+    external tools.
 
-  Subsequent sections of the transcript provide implementation blueprints for
-  API contracts, queue/message schemas, storage layout, feature vectors,
-  segmentation parameters, classifier architectures, data versioning, security
-  considerations, testing strategy, and runnable worker skeletons.
-  >>>>>>> main
+### Implementation Blueprint Highlights
+
+- **API Contracts** – FastAPI endpoints manage uploads, taxonomy CRUD, segment
+  search and composition editing with Pydantic request/response models.
+- **Message Schemas & Queues** – Kafka topics (or Celery tasks) carry typed
+  messages through decode → pose → features → segment → identify → index stages.
+- **Storage Layout** – Raw uploads and derived clips live in object storage
+  (MinIO/S3); metadata and segment records reside in Postgres.
+- **Feature Vectors & Segmentation** – Normalized joint coordinates and motion
+  energy feed change‑point detectors that split videos into candidate move
+  segments.
+- **Classifier Architectures** – Early prototypes rely on template matching; the
+  roadmap evolves toward TCN or Transformer classifiers with calibration.
+- **Data Versioning & Reproducibility** – Dataset manifests and model artifacts
+  are tracked with DVC and MLflow; runs log random seeds and environment hashes.
+- **Security & Privacy** – Uploads undergo AV scanning and consent checks, with
+  audit logs for access and deletions.
+- **Testing Strategy** – Unit tests cover workers and API routes, while an E2E
+  smoke test validates the full pipeline against a sample clip.
+- **Worker Skeletons** – DecodeWorker, PoseWorker, FeaturesWorker, SegmentWorker,
+  IdentifyWorker and IndexWorker provide extensible entry points for each stage.
+
+### Composer Intelligence & Exporters
+
+- **Choreography Graph** – Sequence data produces move statistics and transition
+  probabilities that inform suggestions.
+- **Markov Suggestion Engine** – A backoff model blends trigram, bigram and
+  unigram counts with temperature‑scaled sampling and optional difficulty
+  constraints.
+- **Beat Alignment & Retargeting** – Durations are normalized to beats and can be
+  stretched or mirrored to match a new song’s tempo or camera angle.
+- **Export Formats** – Planned outputs include PDF step sheets, JSON definitions
+  and future auto‑rendered tutorial videos.
+
+### Operational Enhancements
+
+- **Notifications** – Slack/Discord webhook helpers announce when identification
+  and indexing jobs complete.
+- **Optional ORM** – Workers can switch between async SQLAlchemy models and raw
+  SQL for database access.
+- **Kubernetes Job Template** – Helm chart includes a one‑off job for triggering
+  analysis of a specific video via the API.
 
 These notes capture the intent and methodology behind the generated codebase
 and serve as a guide for future development.
+
+## Timing
+Last updated: Fri Aug 29 03:58:08 UTC 2025
